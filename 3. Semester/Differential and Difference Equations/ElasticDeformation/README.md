@@ -1,6 +1,14 @@
 # ElasticDeformation
 
-Finite elements method for elastic deformation problem
+Finite elements method for elastic deformation problem described [here](zadanie_obliczeniowe.pdf)
 
-### How to start:
-For build and execute project use ```make draw_graph%``` where `%` is N parameter and N is natural number that belongs to set [2, 100]
+### Requirements
+* Go 1.14 
+* make
+* gnuplot
+
+### Build and run:
+Use ```make draw_graph%``` where `%` is N parameter and N is natural number that belongs to set [2, 100]
+
+### Results:
+Result chart will create automatically [here](elasticDeformation.png) and text verision will create [here](result.txt)
