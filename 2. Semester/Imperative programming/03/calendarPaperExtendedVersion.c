@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-
 int main() {            // Does not work
     int monthToPrint;
     time_t currentTime = time(NULL);

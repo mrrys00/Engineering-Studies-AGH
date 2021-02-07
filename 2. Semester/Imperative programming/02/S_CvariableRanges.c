@@ -1,3 +1,5 @@
+// Check variable ranges
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -28,7 +30,7 @@ float floatRange(float i) {
     return i;
 }
 
-long long int lliRange(long long int i) {       // to optimize
+long long int lliRange(long long int i) {
     while(i >= 0) {
         printf("%lld\n", i);
         i+=1000;

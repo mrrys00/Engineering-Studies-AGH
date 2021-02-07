@@ -12,7 +12,7 @@ typedef struct Node {
 } Node;
 
 
-Node* insertWord(Node* first, char word[]) {     // wstawianie do listy w odpowiednim miejscu
+Node* insertWord(Node* first, char word[]) {     // insert to array
     if(first == NULL) {
         first = (Node*) malloc(sizeof(Node));
         memset(first->word, '\0', sizeof(first->word));
@@ -46,19 +46,19 @@ Node* insertWord(Node* first, char word[]) {     // wstawianie do listy w odpowi
     return first;
 }
 
-int isLetter(char ch) {         // określenie czy to litera
+int isLetter(char ch) {         // is letter
     int code = (int) ch;
     if ((97 <= code && code <= 122) || (65 <= code && code <= 90)) return 1;
     return 0;
 }
 
-int isValidCharacter(char character) {      // określnie czy to znak zgodny z wymogami polecenia
+int isValidCharacter(char character) {      // is valid character
     int code = (int) character;
     if ((isLetter(character)) || (code >= 48 && code <= 57) || (code == '\'' || code == '-')) return 1;
     else return 0;
 }
 
-void processSingleWord(char word[], Node** list) {       // przetwarzanie pojedynczego wyrazu
+void processSingleWord(char word[], Node** list) {       // process single word
     int i2 = 0;
     for (int i = 0; word[i] != '\0'; i++) { 
         if (65 <= word[i] && word[i] <= 90) {
@@ -76,7 +76,7 @@ void processSingleWord(char word[], Node** list) {       // przetwarzanie pojedy
     *list = insertWord(*list, s);
 }
 
-void processLine(char line[], Node** list) {             // przetwarzanie pojedynczej linii 
+void processLine(char line[], Node** list) {             // process single line
    char* token = strtok(line, " /");
    while( token != NULL ) {
        processSingleWord(token, list);
@@ -85,7 +85,7 @@ void processLine(char line[], Node** list) {             // przetwarzanie pojedy
    free(token);
 }
 
-Node* processFile(Node* first) {                        // przetwarzanie pliku
+Node* processFile(Node* first) {                        // process file
     char* inputFileName = "./tekst.txt";
     FILE * txtfile = fopen(inputFileName, "r");
     char str[MAXCHAR];
@@ -102,7 +102,7 @@ Node* processFile(Node* first) {                        // przetwarzanie pliku
     return first;
 }
 
-void printList(Node* first) {                           // wypisanie listy
+void printList(Node* first) {                           // printf list
     int nodde = 0;
     while(first != NULL) {
         printf("Node order number: %d\t, Number of word occurences: %d\t, Word: %s\n\n", nodde, first->counter, first->word);
@@ -111,7 +111,7 @@ void printList(Node* first) {                           // wypisanie listy
     }
 }
 
-void checkWord(Node* first) {                           // sprawdzenie czy słowo się pojawiło
+void checkWord(Node* first) {                           // check if word appear before
     if(first == NULL) {
         printf("Nothing to print - list is empty\n"); return;
     }

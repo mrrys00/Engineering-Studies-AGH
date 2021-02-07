@@ -12,7 +12,7 @@ typedef struct Node {
 } Node;
 
 
-Node* insertWord(Node* first, char word[]) {     // wstawianie do listy w odpowiednim miejscu
+Node* insertWord(Node* first, char word[]) {
     if(first == NULL) {
         first = (Node*) malloc(sizeof(Node));
         memset(first->word, '\0', sizeof(first->word));
@@ -58,7 +58,7 @@ int isValidCharacter(char character) {
     else return 0;
 }
 
-void processSingleWord(char word[], Node** list) {       // przetwarzanie pojedynczego wyrazu
+void processSingleWord(char word[], Node** list) {
     int i2 = 0;
     for (int i = 0; word[i] != '\0'; i++) { 
         if (65 <= word[i] && word[i] <= 90) {
@@ -76,7 +76,7 @@ void processSingleWord(char word[], Node** list) {       // przetwarzanie pojedy
     *list = insertWord(*list, s);
 }
 
-void processLine(char line[], Node** list) {             // przetwarzanie pojedynczej linii 
+void processLine(char line[], Node** list) {
    char* token = strtok(line, " /");
    while( token != NULL ) {
        processSingleWord(token, list);
@@ -120,7 +120,7 @@ Node* processFile(Node* first) {
     return first;
 }
 
-void enddelchar(char str[], const char ch) {       // usuwanie ostatniego znaku - potrzebne ponieważ znak ostatni wczytany z tekstu to \n
+void enddelchar(char str[], const char ch) {       // remove last character
     int len = strlen(str);
     str[len - 1] = '\0';
 }

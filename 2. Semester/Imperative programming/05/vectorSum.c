@@ -10,7 +10,7 @@ int main() {
     int a1[6] = {1, 2, 3, 4, 5, 9999}, a2[6] = {1}, b1[] = {442235}, b2[] = {900000};
     int arrSize = *(&a1 + 1) - a1; printf("arrsize = %d \n", arrSize);
     int toSum[1+3*arrSize]; 
-    toSum[0] = arrSize;         //rozmiar wektora
+    toSum[0] = arrSize;         // vector size
     for(int i = 0; i < arrSize; i += 1) { toSum[i+1] = a1[i]; toSum[arrSize+i+1] = a2[i]; toSum[2*arrSize + i+1] = 0; }
     vectorsSum(toSum);
     int j = 1;

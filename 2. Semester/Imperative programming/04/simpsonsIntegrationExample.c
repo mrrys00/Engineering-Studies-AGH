@@ -11,17 +11,15 @@ double funkcja(double x) {
 
 double oblicz_rek(double a, double fa, double c, double fc,double b, double fb, double Q, double tol, int poziom){
 	double c1,c2,fc1,fc2,Q1,Q2;
-	c1 = (a+c)/2;  fc1 = funkcja(c1);  // funkcja w tym punkcie nigdy nie by³a i nie bêdzie obliczana 
-	Q1 = (c-a)/6 * (fa +4*fc1 + fc);   // ca³ka z lewej po³ówki
-	c2 = (b+c)/2;  fc2 = funkcja(c2);  // funkcja w tym punkcie nigdy nie by³a i nie bêdzie obliczana
-	Q2 = (b-c)/6 * (fc +4*fc2 + fb);   // ca³ka z prawej po³ówki
+	c1 = (a+c)/2;  fc1 = funkcja(c1); 
+	Q1 = (c-a)/6 * (fa +4*fc1 + fc);
+	c2 = (b+c)/2;  fc2 = funkcja(c2);
+	Q2 = (b-c)/6 * (fc +4*fc2 + fb);
 	if(fabs(Q1+Q2-Q) < tol) {
-//		printf("przedzial = %10.7f,  poziom = %2d\n",b-a, poziom);
-	    return Q1+Q2;                  // zwracana suma jest dok³adniejszym przybli¿eniem ca³ki ni¿ Q 
+	    return Q1+Q2; 
 	}
-	if(poziom > LEVEL_MAX)  return NAN;   // ka¿da póŸniejsza operacja arytmetyczna z NaN da w wyniku wartoœæ NAN - a¿ do wyjœcia do main
+	if(poziom > LEVEL_MAX)  return NAN;
 	return oblicz_rek(a,fa,c1,fc1,c,fc,Q1, tol/2, poziom+1) + oblicz_rek(c,fc,c2,fc2,b,fb,Q2,tol/2,poziom+1);
-                      // zast¹pienie sumy poziom+1 inkrementacj¹ by³oby b³êdem! Dlaczego? 
 }
 
 int main(void) {

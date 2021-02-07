@@ -1,4 +1,4 @@
-// Oblicza współczynnik BMI. Obowiązkowo: program wczytuje masę w kilogramach, a wzrost w centymetrach.
+// Count BMI. Obligatory input: weight in kgs, height in cms 
 
 #include <stdio.h>
 

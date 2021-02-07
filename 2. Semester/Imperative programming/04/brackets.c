@@ -1,21 +1,4 @@
-// Program sprawdza, czy w łańcuchu znakowym jest prawidłowa kolejność nawiasów typu
-// (). [] i {}.
-
-// Założenia:
-//     Nawiasy występują wśród dowolnych innych znaków ASCII.
-//     Nawiasy mogą być zagnieżdżone, np. (...[..]..{..}..)..
-//     Oba nawiasy jednej pary muszą być na tym samym "poziomie".
-
-// Przykład nieprawidłowej kolejności:  ([)] 
-
-// Wersje programu: Program czyta ciąg znaków z:
-//     klawiatury i sygnalizuje błędną kolejność po wprowadzeniu znaku końca klawiszem
-// ENTER,
-//     z jednowymiarowej tablicy typu char, w której jest zapisany łańcuch znakowy,
-//     z kolejnych wierszy tablicy dwuwymiarowej, w których są zapisane łańcuchy
-
-// różnej długości.
-
+// Check if brackets order in character chain is correct for all trhee bracket types: (), [], {}
 
 // Assumptions for solution:
 // 0 - () ; 1 - [] ; 2 - {}
