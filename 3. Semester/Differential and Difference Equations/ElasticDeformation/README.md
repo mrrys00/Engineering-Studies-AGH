@@ -1,6 +1,7 @@
 # ElasticDeformation
 
-Finite elements method for elastic deformation problem described [here](zadanie_obliczeniowe.pdf)
+Finite elements method for elastic deformation problem described [here](zadanie_obliczeniowe.pdf). <br>
+Mathematical FEM explaination is [here](MES.pdf).
 
 ### Requirements
 * Go 1.14 
