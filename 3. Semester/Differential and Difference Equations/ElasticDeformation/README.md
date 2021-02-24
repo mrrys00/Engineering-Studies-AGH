@@ -13,3 +13,6 @@ Use ```make draw_graph%``` where `%` is N parameter and N is natural number that
 
 ### Results:
 Result chart will create automatically [here](elasticDeformation.png) and text verision will create [here](result.txt)
+
+### Note:
+There is one mistake during calculating the system of linear equations, however the project scored 100%.
